@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
 
 
 android {
@@ -30,7 +31,18 @@ android {
         exclude 'META-INF/MANIFEST.MF'
     }
 }
-
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = "com.github.Frank97129"
+                artifactId = "Easy-Login"
+                version = "1.0.6"
+            }
+        }
+    }
+}
 
 dependencies {
     implementation 'com.squareup.wire:wire-runtime:4.4.1'
