@@ -37,8 +37,8 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = "com.github.Frank97129"
-                artifactId = "Easy-Login"
-                version = "1.0.6"
+                artifactId = "Easy-Svga"
+                version = "1.0.1"
             }
         }
     }
